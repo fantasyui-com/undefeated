@@ -24,7 +24,7 @@ module.exports = {
 
 
 
-    { text:'Begin wearing a weight west throught the day.', },
+    { text:'Begin wearing a weight vest throught the day.', },
     { text:'Begin wearing wrist weights throughout the day.', },
     { text:'Slowy mix-in increased weights into your cardio dance routine.', },
 
