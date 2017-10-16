@@ -43,27 +43,35 @@ function shuffle(array) {
     return array;
 }
 
-function pages(numberOfPages, data){
+function pages(numberOfPages, type, data){
   const pages = [];
 
   for(let x = 0; x<numberOfPages; x++){
 
     let page = JSON.parse(JSON.stringify(data));
-    page.workout = shuffle(page.workout);
-    page.workout = page.workout.slice(0,6)
+    page.stack = shuffle(page[type]);
 
-    page.workout.map(o=>{
+
+    if(page.stack.length === 0) throw new Error('Unknown type.')
+
+    if(page.stack.length){
+      while(page.stack.length < 6){
+        page.stack = page.stack.concat(page.stack);
+      }
+    }
+
+    page.stack = page.stack.slice(0,6);
+
+    page.stack.map(o=>{
+      o.type = page.meta[type].title;
+    });
+
+    page.stack.map(o=>{
       o.content = hbs.compile(o.text)({value:oneof(o.values||[])});
     });
-    page.workout.map(o=>{
-      o.icon = oneof([
-        'ambulance',
-        'heart',
-        'medkit',
-        'universal-access',
-        'university',
-        'thermometer-full',
-      ]);
+
+    page.stack.map(o=>{
+      o.icon = oneof( page.meta[type].icons );
       o.next = hbs.compile(`Shuffle and draw next card in {{value}} days.`)({value:oneof([7,7,7,14,14,14,14,14,30,30,30,30,30,30,30,])});
     });
 
@@ -79,9 +87,8 @@ function main(program){
   mkdirp.sync( path.join(__dirname, 'dist') );
   const source = fs.readFileSync( path.join(__dirname, 'src', 'index.ejs'), 'utf8')
   const template = hbs.compile(source);
-
-  const html = template( { page: pages( program.pages , data ) } );
-  fs.writeFileSync(path.join(__dirname, 'dist', 'index.html'), html)
+  const html = template( { page: pages( program.pages , program.type , data ) } );
+  fs.writeFileSync(path.join(__dirname, 'dist', program.type+'.html'), html)
 }
 
 module.exports = main;
