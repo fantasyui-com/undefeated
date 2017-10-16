@@ -1,6 +1,6 @@
 {
   "name": "undefeated",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Virtual Trainer System for Rapid Body Development",
   "main": "index.js",
   "scripts": {
