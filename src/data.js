@@ -18,18 +18,18 @@ module.exports = {
     { text:'Pay more attention to your form.', },
     { text:'Pay more attention to range of motion.', },
 
-    { text:'Slow down and increase prolonged stress on muscle.', },
+    { text:'Slow down your reps and increase prolonged stress on muscle.', },
 
     { text:'Get an Interval Timer and focus on timed sets rather than number of reps.', },
 
 
 
-    { text:'Begin wearing a weight vest throught the day.', },
+    { text:'Begin wearing a weight vest throughout the day.', },
     { text:'Begin wearing wrist weights throughout the day.', },
-    { text:'Slowy mix-in increased weights into your cardio dance routine.', },
+    { text:'Slowly mix-in increased weights into your cardio dance routine.', },
 
     { text:'Rather than stopping, set weights down for 5 seconds and resume workout.', },
-    { text:'Slowy mix-in increased weights into your cardio dance routine.', },
+    { text:'Slowly mix-in increased weights into your cardio dance routine.', },
 
   ]
 };
