@@ -24,6 +24,6 @@
     "commander": "^2.11.0",
     "handlebars": "^4.1.2",
     "mkdirp": "^0.5.1",
-    "oneof": "^1.0.1"
+    "oneof": "^1.1.0"
   }
 }
