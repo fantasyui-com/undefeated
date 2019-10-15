@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/fantasyui-com/undefeated#readme",
   "dependencies": {
-    "commander": "^2.20.1",
-    "handlebars": "^4.4.2",
+    "commander": "^2.20.3",
+    "handlebars": "^4.4.3",
     "mkdirp": "^0.5.1",
     "oneof": "^1.1.0"
   }
